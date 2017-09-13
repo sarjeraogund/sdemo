@@ -211,7 +211,7 @@ left: 45%;
 		<ul class="nav navbar-nav" width="50%">
 			<li class="dropdown col-md-2  mega-dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">VEGETABLES</a>
-				
+			
 				<ul class="dropdown-menu dropdown-menu-2 mega-dropdown-menu mega-dropdown-menu-2c row">
 				
 						<li class="col-sm-6">
@@ -373,18 +373,15 @@ left: 45%;
 					</ul>
 					</li>
 	
-			
-			
-			
-			
-			
-	</ul>
-	</div><!-- /.nav-collapse -->
+	
+				
 	
 		
-	
+	</ul>
+	</div>
 </nav>
 </div>
+
 
 
 <script type="text/javascript">

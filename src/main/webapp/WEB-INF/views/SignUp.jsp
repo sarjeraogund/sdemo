@@ -9,9 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	 <link href="css/LoginSignUp.css" rel="stylesheet">
+	 
 
-<title>Insert title here</title>
+<title>SignUp</title>
 <style type="text/css">
 
 
@@ -41,39 +41,48 @@
 			Please fill out the form below to create a new account.
 			</p>
 			<div class="form-white">
-				<form role="form" onSubmit="return checkForm(this);" name="signup" id ="signup" action="saveUser" method="post">
+				<form method="post" action="saveUser">
 				  <div class="form-group">
 					<div class="row">
 					  <div class="col-sm-6">
 					  <label for="fname">First Name</label>
-					  <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+					  <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" onBlur="CheckFName(); return false;" autocomplete="off" required>
+					  <span id="errorMessage1" style="display:none; color:red;"></span>
 					  </div>
 					  <div class="col-sm-6">
 					  <label for="lname">Last Name</label>
-					  <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+					  <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" onBlur="CheckLName(); return false;" autocomplete="off" required>
+					  <span id="errorMessage2" style="display:none; color:red;"></span>
 					  </div>
 					</div>
 				  </div>
 
 				  <div class="form-group">
 				    <label for="username">Contact Number</label>
-					<input type="text" class="form-control" id="contact" name="contact" placeholder="Contact">
+					<input type="text" class="form-control" id="contact" name="contact" placeholder="Contact" onBlur="CheckContact(); checkContactNumber(); return false;" autocomplete="off" required>
+					 <span id="errorMessage3" style="display:none; color:red;"></span>
 				  </div>
 				  <div class="form-group">
 				    <label for="email2">Email address</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onBlur="CheckEmail();checEmail(); return false;" autocomplete="off" >
+				 	<span id="errorMessage4" style="display:none; color:red;"></span>
 				  </div>
 				  <div class="form-group">
 					<div class="row">
 					  <div class="col-sm-6">
 					  <label for="password2">Password</label>
-					  <input type="password" class="form-control" id="pwd1" name="pwd1" placeholder="Password">
+					  <input type="password" class="form-control" id="pwd1" name="pwd1"  placeholder="Password" onBlur="CheckPassword(); return false;" autocomplete="off">
+					  <span id="errorMessage5" style="display:none; color:red;"></span>
+					   
 					  </div>
 					  <div class="col-sm-6">
 					  <label for="password2">Repeat password</label>
-					  <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Password">
+					 <input type="password" class="form-control" id="pwd2" name="pwd2"  placeholder="Password" onBlur="CheckPass(); return false;" autocomplete="off">
+						<span id="errorMessage6" style="display:none; color:red;"></span>
+					 
 					  </div>
 					</div>
+					 <span id="errorMessage7" style="display:none; color:red;"></span>
 				  </div>
 				  <div class="checkbox">
 					<label>
@@ -94,98 +103,57 @@
 </div>
 </div>
 
-<script type="text/javascript">
+<script src="js/UserRegistration.js" type="text/javascript"></script> 
 
-  function checkForm(form)
-  {
-    	 if(form.fname.value == "")
-    	{
-     		 alert("Error: First name cannot be blank!");
-     		 form.fname.focus();
-     	 	return false;
-   		}
-     
-    	 re = /^[a-zA-Z]*$/;
-    	 if(!re.test(form.fname.value))
-    	 {
-      		 alert("enter only character");
-      		 form.fname.focus();
-      		 return false;
-   		 }
+ <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+    function checEmail()
+    {
+    	 var email=document.getElementById( "email" ).value;
+    	 $.ajax({
+    			url:"checkUserMail",
+    			data:{email:$("#email").val()},
+    			success:function(resText){
+    				if(resText!="")
+    					{
+    				alert(resText);
+    					}
+    				if(resText!=""){
+    					$("#email").val("");
+    					$("#email").focus();
+    				}
+    			}
+    			
+    		});
+    }
+    </script>
     
-   		 if(form.lname.value == "")
-   		 {
-       		 alert("Error: Last name cannot be blank!");
-       		 form.lname.focus();
-       		 return false;
-     	 }
-   		 
-   		re = /^[a-zA-Z]*$/;
-   	 		if(!re.test(form.lname.value))
-   		 {
-     		  alert("enter only character");
-     		 form.lname.focus();
-     		 return false;
-  		 }
+    <script>
+    function checkContactNumber()
+    {
+    	 var contact=document.getElementById( "contact" ).value;
+    	 $.ajax({
+    			url:"checkContactNumber",
+    			data:{contact:$("#contact").val()},
+    			success:function(resText){
+    				if(resText!="")
+    					{
+    				alert(resText);
+    				
+    					}
+    				if(resText!=""){
+    					$("#contact").val("");
+    					$("#contact").focus();
+    					
+    					
+    				}
+    			}
+    			
+    		});
+    }
+    
+    </script>
    
-     	 if(form.contact.value == "") 
-     	 {
-    	   	 message.alert("Error: contact number must not be null.");
-    	     form.contact.focus();
-    	     return false;
-    	 }
-   	 	
-     	re = /^[0-9]*$/;
-	 		if(!re.test(form.contact.value))
-		 {
- 		  alert("enter only digits");
- 		 form.contact.focus();
- 		 return false;
-		 }
-
-
-     	 if(form.contact.value.length != 10) 
-     	 {
-  	    	 window.alert("Error: Phone number must be 10 digits.");
-  	   		 form.contact.focus();
-  	   		 return false;
-  		 }
-      
-      
-     	 if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value)
-     	 {
-          	if(form.pwd1.value.length < 6)
-         	 {
-           		 alert("Error: Password must contain at least six characters!");
-           		 form.pwd1.focus();
-           		 return false;
-         	 }
-     	 
-      
-     		 re = /[0-9]/;
-        	 if(!re.test(form.pwd1.value))
-        	 {
-          		 alert("Error: password must contain at least one number (0-9)!");
-          		 form.pwd1.focus();
-          		 return false;
-       		 }
-        	 
-        	 re = /[A-Z]/;
-             if(!re.test(form.pwd1.value)) 
-             {
-               	 alert("Error: password must contain at least one uppercase letter (A-Z)!");
-              	 form.pwd1.focus();
-              	 return false;
-             }
-     
-     	 }
-     	else {
-     	      alert("Error: Please check that you've entered and confirmed your password!");
-     	      form.pwd1.focus();
-     	      return false;
-     		}
-  }
-</script>
 
 </body>
 </html>

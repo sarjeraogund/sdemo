@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bhumata.model.User;
 import com.bhumata.service.UserService;
@@ -126,6 +126,44 @@ public class BaseController {*/
 		return "SignUp";
 		
 	}
+	
+	@RequestMapping(value = "/checkUserMail")
+	public @ResponseBody String checkEmail(@RequestParam("email") String email)
+	{
+		String msg=null;
+		User user=new User();
+		user.setEmail(email);
+		boolean flag=userService.checkEmail(user);
+		if(flag==true)
+		{
+			msg="Email id already exist";
+		}
+		else
+		{
+			msg="";
+		}
+		return msg;
+	}
+	
+	@RequestMapping(value = "/checkContactNumber")
+	public @ResponseBody String checkContactNumber(@RequestParam("contact") Long contact)
+	{
+		String msg=null;
+		User user=new User();
+		user.setContact(contact);
+		boolean flag=userService.checkContactNumber(user);
+		if(flag==true)
+		{
+			msg="Contact Number already exist";
+			
+		}
+		else
+		{
+			msg="";
+		}
+		return msg;
+	}
+	
 	
 }
 

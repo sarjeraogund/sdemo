@@ -50,7 +50,7 @@ padding:0;
       </form>
     <div class="collapse navbar-collapse" id="myNavbar">
        <ul class="nav navbar-nav navbar-right">
-       <li class="upper-links"><a class="glyphicon glyphicon-earphone" href="http://clashhacks.in/">913453436436</a></li>
+       <li class="upper-links"><a  href="FarmerLogin">Farmer</a></li>
                 <li class="upper-links"><a class="glyphicon glyphicon-map-marker" href="https://campusbox.org/">Wakad</a></li>
          <li class="dropdown">
           <a href="saveLogin"><b>Login</b></a>

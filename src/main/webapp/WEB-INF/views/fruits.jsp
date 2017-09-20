@@ -279,10 +279,9 @@ h5 {
         <div class="mini-menu">
             <ul>
         <li class="sub">
-        <form name="form1" action="showFilterproductCategory">
-            <input type="submit" name="cname" value="Vegetables"></a>
+            <a href="showFilterproductCategory"> Vegetables</a>
             <!-- <ul>
-               <li><a href="showFilterproductCategory">Vegetables</a></li>
+               <li><a href="#">Beans,Brinjals,okra</a></li>
                <li><a href="#">cabbage,cauiliflower,broccoli</a></li>
                <li><a href="#">cucumber and capcicum</a></li>
                <li><a href="#">gourds,pumpkins,drumsticks</a></li>
@@ -290,9 +289,8 @@ h5 {
                <li><a href="#">Peas,corn,mushrooms</a></li> 
                <li><a href="#">root vegetables</a></li> 
                <li><a href="#">potatoes,onions,tomatos</a></li> 
-            </ul> -->
-       </li>
-       </form>
+            </ul>
+ -->        </li>
         <li class="sub">
             <a href="#">Fresh Fruits</a>
             <ul>
@@ -363,13 +361,13 @@ h5 {
         </div>
         
     </div>
-
-        <c:forEach items="${product}" var="product">
-  <div class="items">
+ <div class="items">
   
         <div data-price="160" class="item">
+        <c:forEach items="${product}" var="product">
+ 
           <img src="<ui:image img='${product.productImg}'></ui:image>" alt="Image" />
-           <!--  <img src="images/image/rose.jpg" alt="apple" class="img-item"></img> -->
+          
                 <div class="info">
                 	 <p class="descroption">Fresho</p>
                     <h3>${product.productName }</h3>
@@ -383,33 +381,23 @@ h5 {
             <option value="1000">1kg. approx 6,7 nos. Rs.160</option>
         </select>
         
-	
-        
          <div class="aa">
-          
-         <table><tr><td>
-         Qty:<input type="text" name="qty" style="width: 40px;">
-         </td>
-         <td>
+         
+         Qty:<input type="text" name="qty" style="width: 30px;">
+        
          	<button class="btn" qa="add" type="button" style="margin-left: 50px;">
          	
          	<strong style=" text-shadow: 1px 1px #fff;">Add to Cart </strong>
-         	</button></td></tr>
-         	</table>
+         	</button>
+         	
          
          	</div>
+         	</div>
          	
-                </div>
-        </div>
-   
-    
-        </div>    
-          
-        </div>
-  
-  
+         	<div>
+      
  <button class="loadmore">Load More</button>
-    
+    </div>
 </body>
 
     <!--<script
@@ -443,8 +431,8 @@ h5 {
     });
 </script>
 <script src="script.js" ></script>
-</html>
-<script>
+
+<script> 
     $( function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -475,5 +463,7 @@ h5 {
 // } );
 </script>
 
-</body>
 </html>
+
+<!-- </body>
+</html> -->

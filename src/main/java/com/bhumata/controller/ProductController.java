@@ -2,8 +2,12 @@ package com.bhumata.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bhumata.model.Product;
 import com.bhumata.service.ProductService;
+
 
 @Controller
 @RequestMapping("/")
@@ -39,5 +44,77 @@ public class ProductController {
 			
 		}
 		
-	
+		// show products
+		@RequestMapping(value = "/showdisplayproduct")
+		public String showdisplayproduct()
+		{
+			return "displayproduct";
+		}
+		
+		
+		
+		//show product info
+		@RequestMapping(value = "/showdisplayproduct/{pId}")
+		public String showdisplayproduct(@PathVariable("pId") Long pId,Model model,HttpSession session)
+		{
+			System.out.println(pId);
+			
+				Product product=new Product();
+				product.setpId(pId);
+				product=productService.getProduct(product);
+				System.out.println(product);
+				model.addAttribute("product",product);
+				return "displayproduct";
+		}
+		
+		
+		@RequestMapping(value = "/showFilterproduct1")
+		public String showFilterproduct1()
+		{
+			return "flower";
+		}
+		
+		
+		//filter page response with only name
+		@RequestMapping(value="/showFilterproduct")
+		public String showFilterproduct(@RequestParam("pname") String productName,Model model, Integer offset, Integer maxResults){
+			Product product=new Product();
+		
+			if(productName.isEmpty())
+			{
+				
+				product.setProductName("Potatoes");
+			}
+			else
+			{
+				product.setProductName(productName);
+			}
+			model.addAttribute("product", productService.listProductByName(product,offset, maxResults));
+			model.addAttribute("offset", offset);
+			model.addAttribute("url", "showFilterproduct");
+			return "flower";
+		}
+		
+		//filter page response with only  product names
+		
+		@RequestMapping(value="/showFilterproductCategory")
+		public String showFilterproductCategory(@RequestParam("cname") String productCategory,Model model, Integer offset, Integer maxResults){
+			Product product=new Product();
+		
+			if(productCategory.isEmpty())
+			{
+				
+				product.setProductCategory("Vegetables");
+			}
+			else
+			{
+				product.setProductCategory(productCategory);
+			}
+			model.addAttribute("product", productService.listProductByCategory(product,offset, maxResults));
+			model.addAttribute("offset", offset);
+			model.addAttribute("url", "showFilterproduct");
+			return "fruits";
+		}
+		
+		
 }

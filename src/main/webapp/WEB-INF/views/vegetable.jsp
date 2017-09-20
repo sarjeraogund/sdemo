@@ -409,7 +409,8 @@ function myFunction() {
      <div class="aa">
      <br>
          	<button class="btn" qa="add" type="button" style="margin-left: 65px;">
-         	<strong style=" text-shadow: 1px 1px #fff;">Add to Cart </strong>
+         	<a href="showdisplayproduct/37">
+         	<strong style=" text-shadow: 1px 1px #fff;">Add to Cart </strong></a>
          	
          	</button> 
          	</div>

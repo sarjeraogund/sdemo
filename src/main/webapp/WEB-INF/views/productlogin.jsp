@@ -34,6 +34,21 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+/* Style the reset button with a specific background color etc */
+input[type=reset] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the reset button, add a darker green color */
+input[type=reset]:hover {
+    background-color: #45a049;
+}
+
 /* Add a background color and some padding around the form */
 .container {
     border-radius: 5px;
@@ -59,18 +74,20 @@ input[type=submit]:hover {
 
 <div class="div2">
 <div class="container">
-<form action="saveProduct" name="productlogin" id="productlogin" enctype="multipart/form-data" method="post"  >
+<form action="saveProduct" name="productlogin" id="productlogin" enctype="multipart/form-data" method="post" onSubmit=" return CheckDecimal(document.productlogin.price); " >
 
-<label for="pName">Product Name:<input type="text" name="name" id="name" placeholder="Product Name" onBlur="CheckName(); return false;"></label>
+<label for="pName">Product Name:<input type="text" name="name" id="name" placeholder="Product Name" onBlur="CheckName(); return false;" required/></label>
+<span  id="error"></span><br>
+<label for="pCategory">Product Category:<input type="text" name="Category" id="Category" placeholder="Product Category" onBlur= "CheckCategory();return false;" required/></label>
+<span  id="error1" > </span><br>
 
-<label for="pCategory">Product Category:<input type="text" name="Category" placeholder="Product Category"></label>
-
-<label for="price">Price:<input type="text" name="price" placeholder="Price"></label>
-<label for="quantity">Quantity:<input type="text" name="quantity" placeholder="Quantity" onblur="allnumeric()"></label>
+<label for="price">Price:<input type="text" name="price" placeholder="Price"  onBlur="CheckDecimal(document.productlogin.price);return false;" required/></label>
+<label for="quantity">Quantity:<input type="text" name="quantity" placeholder="Quantity" onBlur="allnumeric(document.productlogin.quantity);return false;" required></label>
+<span  id="error2"> </span><br><br>
 <label for="desc">Description:</label>
 <textarea id="subject" name="desc" placeholder="Write something about product.." style="height:200px"></textarea>
 
-<label for="image">Image:<input type="file" name="productImg"><a href="showForm"></a><input type="submit" value="Submit"></label>
+<label for="image">Image:<input type="file" name="productImg"><a href="showForm"></a><input type="submit" value="Submit"> <input type="reset" value="Reset"></label>
 </form>
 
 

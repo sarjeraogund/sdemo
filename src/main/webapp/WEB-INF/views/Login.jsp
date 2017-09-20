@@ -11,7 +11,7 @@
   
   <link href="css/LoginSignUp.css" rel="stylesheet">
 
-<title>Insert title here</title>
+<title>Login</title>
 <style type="text/css">
 
 

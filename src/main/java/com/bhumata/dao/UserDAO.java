@@ -4,5 +4,9 @@ import com.bhumata.model.User;
 
 public interface UserDAO {
 	public void saveUser(User user);
+	public boolean checkEmail(User user);
+	public boolean checkContactNumber(User user);
+
+	
 
 }

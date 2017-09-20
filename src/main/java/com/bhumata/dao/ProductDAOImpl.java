@@ -25,5 +25,22 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 
+	public Product getProduct(Long pId) {
+		Session session=sessionFactory.openSession();
+		Criteria crit=session.createCriteria(Product.class);
+		Criterion c1=Restrictions.eq("pId",pId);
+		crit.add(c1);
+		List<Product> list=crit.list();
+		if(list.isEmpty())
+		{
+			return null;
+		}
+		else
+		{
+			Product product=(Product)list.get(0);
+			return product;
+		}
+	}
+
 
 }

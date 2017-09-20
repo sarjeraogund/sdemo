@@ -319,7 +319,7 @@ padding:0;
               
 </section>
     
-<jsp:include page="Footer.jsp"/>
+
 
 </body>
 </html>

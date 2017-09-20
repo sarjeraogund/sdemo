@@ -363,7 +363,9 @@ h5 {
   <div class="items">
   
         <div data-price="160" class="item">
-            <img src="images/apple.jpg" alt="apple" class="img-item"></img>
+        
+            <a href="showproductdetail/1"><img src="images/apple.jpg" alt="apple" class="img-item"></img></a>
+            
                 <div class="info">
                 	 <p class="descroption">Fresho</p>
                     <h3>Apple-Washington</h3>

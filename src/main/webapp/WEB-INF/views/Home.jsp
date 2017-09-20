@@ -37,16 +37,16 @@ padding:0;
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>ans
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#">Farming</a>
     </div>
-     <form class="navbar-form navbar-left">
+     <form class="navbar-form navbar-left" action="showFilterproduct">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="pname" class="form-control" placeholder="Product Name">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <a href=" "><button type="submit" class="btn btn-default">Search</button></a>
       </form>
     <div class="collapse navbar-collapse" id="myNavbar">
        <ul class="nav navbar-nav navbar-right">

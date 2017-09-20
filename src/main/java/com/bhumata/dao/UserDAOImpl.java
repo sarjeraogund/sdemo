@@ -24,6 +24,7 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 	
+
 	@SuppressWarnings("unchecked")
 	public boolean checkEmail(User user) {
 		Session session=sessionFactory.openSession();
@@ -59,6 +60,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 	
+
 	
 
 }

@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	 
+	 <link href="css/LoginSignUp.css" rel="stylesheet">
 
 <title>SignUp</title>
 <style type="text/css">
@@ -23,7 +23,7 @@
 	<div class="row destacados">
 	
 	<h3>
-	<a style="cursor: pointer;  class="uiv2-login-new active" href="saveLogin" >Login</a> |
+	<a style="cursor: pointer;  class="uiv2-login-new active" href="UserLogin" >Login</a> |
 	<b> <a style="cursor: pointer" class="uiv2-sign-up-new border-none">Sign Up</a></b>
 	</h3>
 	 
@@ -71,13 +71,13 @@
 					<div class="row">
 					  <div class="col-sm-6">
 					  <label for="password2">Password</label>
-					  <input type="password" class="form-control" id="pwd1" name="pwd1"  placeholder="Password" onBlur="CheckPassword(); return false;" autocomplete="off">
+					  <input type="password" class="form-control" id="password" name="password"  placeholder="Password" onBlur="CheckPassword(); return false;" autocomplete="off">
 					  <span id="errorMessage5" style="display:none; color:red;"></span>
 					   
 					  </div>
 					  <div class="col-sm-6">
 					  <label for="password2">Repeat password</label>
-					 <input type="password" class="form-control" id="pwd2" name="pwd2"  placeholder="Password" onBlur="CheckPass(); return false;" autocomplete="off">
+					 <input type="password" class="form-control" id="password2" name="password2"  placeholder="Password" onBlur="CheckPass(); return false;" autocomplete="off">
 						<span id="errorMessage6" style="display:none; color:red;"></span>
 					 
 					  </div>

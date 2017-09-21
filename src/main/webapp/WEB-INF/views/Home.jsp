@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +16,7 @@
   <link href="css/header.css" rel="stylesheet">
                                                        
    <link href="css/style.css" rel="stylesheet">
+    
  
 
         
@@ -52,10 +54,19 @@ padding:0;
        <ul class="nav navbar-nav navbar-right">
        <li class="upper-links"><a  href="FarmerLogin">Farmer</a></li>
                 <li class="upper-links"><a class="glyphicon glyphicon-map-marker" href="https://campusbox.org/">Wakad</a></li>
-         <li class="dropdown">
-          <a href="saveLogin"><b>Login</b></a>
-			
+     <c:choose>
+    <c:when test="${sessionScope.user!=null}">
+       <li class="dropdown">
+          <a href="LogoutUser"><b>Logout</b></a>	
         </li>
+    </c:when>    
+    <c:otherwise> 
+         <li class="dropdown">
+          <a href="UserLogin"><b>Login</b></a>
+        </li>
+        </c:otherwise>
+</c:choose>	
+        
           <li><a href="#">Help</a></li>
        
       </ul>
@@ -320,6 +331,9 @@ padding:0;
 </section>
     
 <jsp:include page="Footer.jsp"/>
+
+ 
+
 
 </body>
 </html>

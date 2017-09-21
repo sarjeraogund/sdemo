@@ -169,65 +169,65 @@ function CheckEmail()
 
 function CheckPassword()
 {
-	var pwd1 = document.getElementById('pwd1');
+	var password = document.getElementById('password');
 	
-	if(pwd1.value == "")
+	if(password.value == "")
  	{
  		document.getElementById("errorMessage5").innerHTML="Please Fill Out this field ";
         document.getElementById("errorMessage5").style.display = "block";
-        document.getElementById("pwd1").style.borderColor="#FF0000";
-  		form.pwd1.focus();
+        document.getElementById("password").style.borderColor="#FF0000";
+  		form.password.focus();
   	 	return false;
 	}
 	else
  	{
- 		document.getElementById("pwd1").style.borderColor="#000000"; 
+ 		document.getElementById("password").style.borderColor="#000000"; 
  		document.getElementById("errorMessage5").innerHTML="";
  		 
  	} 
 	
 	
-    if(pwd1.value.length < 6)
+    if(password.value.length < 6)
     {
      	document.getElementById("errorMessage5").innerHTML="Password must contain at least six characters!";
        	document.getElementById("errorMessage5").style.display = "block";
-       	document.getElementById("pwd1").style.borderColor="#FF0000";
- 		form.pwd1.focus();
+       	document.getElementById("password").style.borderColor="#FF0000";
+ 		form.password.focus();
  		return false;
     }
 	else
 	{
-		document.getElementById("pwd1").style.borderColor="#000000";
+		document.getElementById("password").style.borderColor="#000000";
  		document.getElementById("errorMessage5").innerHTML="";
 	}
 	
 	re = /[0-9]/;
-	if(!re.test(pwd1.value))
+	if(!re.test(password.value))
 	{
 		document.getElementById("errorMessage5").innerHTML=" password must contain at least one number (0-9)!";
 		document.getElementById("errorMessage5").style.display = "block";
-		document.getElementById("pwd1").style.borderColor="#FF0000";
-	 	form.pwd1.focus();
+		document.getElementById("password").style.borderColor="#FF0000";
+	 	form.password.focus();
 	 	return false;
 	}
 	else
 	{
-		document.getElementById("pwd1").style.borderColor="#000000";
+		document.getElementById("password").style.borderColor="#000000";
 		document.getElementById("errorMessage5").innerHTML="";
 	}
 	 
 	ree = /[A-Z]/;
-    if(!ree.test(pwd1.value))
+    if(!ree.test(password.value))
     {
 		document.getElementById("errorMessage5").innerHTML=" password must contain at least one number (0-9)!";
 		document.getElementById("errorMessage5").style.display = "block";
-		document.getElementById("pwd1").style.borderColor="#FF0000";
-	 	form.pwd1.focus();
+		document.getElementById("password").style.borderColor="#FF0000";
+	 	form.password.focus();
 	 	return false;
 	}
 	else
 	{
-		document.getElementById("pwd1").style.borderColor="#000000";
+		document.getElementById("password").style.borderColor="#000000";
 		document.getElementById("errorMessage5").innerHTML="";
 	}
 	 	 	 
@@ -235,35 +235,35 @@ function CheckPassword()
 
 function CheckPass()
 {
-	var pwd1 = document.getElementById('pwd1');
-    var pwd2 = document.getElementById('pwd2');
+	var password = document.getElementById('password');
+    var password2 = document.getElementById('password2');
     
-    if(pwd2.value == "")
+    if(password2.value == "")
  	{
  		document.getElementById("errorMessage6").innerHTML="Please Fill Out this field ";
         document.getElementById("errorMessage6").style.display = "block";
-        document.getElementById("pwd2").style.borderColor="#FF0000";
-  		form.pwd2.focus();
+        document.getElementById("password2").style.borderColor="#FF0000";
+  		form.password2.focus();
   	 	return false;
 	}
  	else
  	{
- 		document.getElementById("pwd2").style.borderColor="#000000";
+ 		document.getElementById("password2").style.borderColor="#000000";
  		document.getElementById("errorMessage6").innerHTML="";
  	} 
     
-    if(pwd2.value != pwd1.value)
+    if(password2.value != password.value)
     {
     	document.getElementById("errorMessage7").innerHTML=" Please check that you've entered and confirmed your password!";
 	 	document.getElementById("errorMessage7").style.display = "block";
-	 	document.getElementById("pwd2").style.borderColor="#FF0000";
-		form.pwd2.focus();
+	 	document.getElementById("password2").style.borderColor="#FF0000";
+		form.password2.focus();
 		return false;
     	
 	}
 	else
 	{
-		document.getElementById("pwd2").style.borderColor="#000000";
+		document.getElementById("password2").style.borderColor="#000000";
  		document.getElementById("errorMessage7").innerHTML="";
 	}
 	

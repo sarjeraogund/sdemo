@@ -114,6 +114,9 @@ position:relative:
     opacity: 1;
 }
 
+
+
+
 .gallery-box:hover img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -264,7 +267,7 @@ min-height:400px;
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #23c2e1;
+  
 }
 
 

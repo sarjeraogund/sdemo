@@ -6,6 +6,8 @@
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
+     margin:0px;
+   padding:0px;
     
 }
 #login-dp .help-block{

@@ -124,7 +124,7 @@ public class UserController {
 			{
 				session.setAttribute("user",user);
 				model.addAttribute("invalid",0000);
-				return "Home";
+				return "redirect:/showHome";
 				
 			}
 			
@@ -134,7 +134,7 @@ public class UserController {
 	
 //Logout User		
 		@RequestMapping("/LogoutUser")
-		public String logoutOwner(HttpSession session) {
+		public String logoutUser(HttpSession session) {
 			session.removeAttribute("User");
 			session.removeAttribute("email");
 			session.invalidate();

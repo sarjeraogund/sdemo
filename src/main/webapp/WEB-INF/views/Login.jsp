@@ -11,6 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <link href="css/LoginSignUp.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
 
 <title>Login</title>
 <style type="text/css">
@@ -22,6 +23,7 @@
 
 </head>
 <body class="body-green" data-elink-extension-installed="1.1.5">
+<jsp:include page="Head.jsp"/>
 <div class="container">
 	<div class="row destacados">
 	
@@ -118,6 +120,7 @@
 </div>
 </div>
 </div>
+
 
 <script type="text/javascript">
 

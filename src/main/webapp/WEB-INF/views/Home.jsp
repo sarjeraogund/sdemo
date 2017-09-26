@@ -16,25 +16,19 @@
   <link href="css/header.css" rel="stylesheet">
                                                        
    <link href="css/style.css" rel="stylesheet">
-    
- 
-
         
     
 <title>Bhumata</title>
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 <style type="text/css">
-h1,h2,h3,h4,h5,h6{
-margin:0;
-padding:0;
-}
+
 
 </style>
 
 </head>
 <body >
 
-<nav class="navbar navbar-default navbar-fix-top topnav" >
+<%-- <nav class="navbar navbar-default navbar-fix-top topnav" >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -73,7 +67,8 @@ padding:0;
     </div>
   </div>
 </nav>
-
+ --%>
+ <jsp:include page="Head.jsp"/>
 <jsp:include page="DropDown.jsp"/>
 
  <div class="intro-header" style="background-image: url('images/img1.png');">
@@ -139,7 +134,7 @@ padding:0;
         <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">DivaStays For All Your Needs</h2>
+                    <h2 class="margin-top-0 text-primary"> For All Your Needs</h2>
                 </div>
             </div>
         </div>

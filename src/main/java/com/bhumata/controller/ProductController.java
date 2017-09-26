@@ -75,7 +75,7 @@ public class ProductController {
 		}
 		
 		
-		//filter page response with only name
+		//filter page response with only one product name
 		@RequestMapping(value="/showFilterproduct")
 		public String showFilterproduct(@RequestParam("pname") String productName,Model model, Integer offset, Integer maxResults){
 			Product product=new Product();
@@ -95,7 +95,7 @@ public class ProductController {
 			return "flower";
 		}
 		
-		//filter page response with only  product names
+		//filter page response with only  product category
 		
 		@RequestMapping(value="/showFilterproductCategory")
 		public String showFilterproductCategory(@RequestParam("cname") String productCategory,Model model, Integer offset, Integer maxResults){
@@ -113,8 +113,22 @@ public class ProductController {
 			model.addAttribute("product", productService.listProductByCategory(product,offset, maxResults));
 			model.addAttribute("offset", offset);
 			model.addAttribute("url", "showFilterproduct");
-			return "fruits";
+			return "flower";
 		}
+		
+		
+		//filter page response with various product names
+		
+				@RequestMapping(value="/showFilterProductNames1/{pId}")
+				public String showFilterProductNames1(@PathVariable("pId")int refId,Model model, Integer offset, Integer maxResults){
+				
+					
+				model.addAttribute("product", productService.listProductByProductNames(refId,offset, maxResults));
+					model.addAttribute("offset", offset);
+					model.addAttribute("url", "showFilterproduct");
+					return "flower";
+				}
+		
 		
 		
 }

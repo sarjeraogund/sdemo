@@ -15,7 +15,7 @@
   <link href="css/header.css" rel="stylesheet">
                                                        
    <link href="css/style.css" rel="stylesheet">
- 
+  <link href="css/style1.css" rel="stylesheet" type="text/css" media="all" />	
 
         
     
@@ -27,12 +27,23 @@ margin:0;
 padding:0;
 }
 
+.group
+{
+border: none;
+	outline: 0;
+	font-size: 0.9em;
+	color: #fff;
+	background: #07980e;
+	width: 100%;
+
+}
+
 </style>
 
 </head>
 <body >
 
-<nav class="navbar navbar-default navbar-fix-top topnav" >
+<!-- <nav class="navbar navbar-default navbar-fix-top topnav" >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -61,16 +72,88 @@ padding:0;
       </ul>
     </div>
   </div>
+  
+  
+  
+  
+  
 </nav>
-
+ -->
+ 
+ <div class="top_bg">
+	<div class="container">
+		<div class="header_top-sec">
+			<div class="top_right">
+				<ul>
+					<li><select class="group">
+							  <option><font size="8">English</font></option>
+							  <option><font size="8">Marathi</font></option>
+							  
+							</select></li> |
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="top_left">
+				<ul>
+					<li class="top_link"><a href="#">Farmer</a></li>	
+					<li class="top_link"><a href="#"  >Login</a>
+						<span>or</span><a  href="#"  >Signup</a></li>|
+					<li class="top_link"><a href="#">My Account</a></li>					
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- top-header -->
+<!-- logo-cart -->
+<div class="header_top" style="background-color:#fff;">
+	<div class="container">
+		<div class="logo">
+		 	<a href="index.html">BHUMATA</a>			 
+		</div>
+		<div class="search" style="margin-left:40px; border:1px solid  #07980e;">
+				 <form name="form1" action="showFilterproduct">
+					<input type="text" name="pname" placeholder="Search..." >
+					<input type="submit" value="">
+					</form>
+			</div>
+		<div class="header_right">
+			<div class="cart box_1">
+				<a href="checkout.html">
+				<div class="total">
+				 <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items</div>
+					<img src="images/image/cart1.png" alt=""/>
+				</a>
+				<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+				<div class="clearfix"> </div>
+			</div>				 
+		</div>
+		<div class="clearfix"></div>	
+	</div>
+</div>
+<script src="js/simpleCart.min.js"> </script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 <jsp:include page="DropDown.jsp"/>
 
  <div class="intro-header" style="background-image: url('images/img1.png');">
-        <div class="container">
+         <div class="container">
 
             <div class="row">
                 <div class="col-lg-12">
-                 <div class="intro-message">
+                 <div class="intro-message"> 
                         <h1>Farming</h1>
                         </div>
                 </div>

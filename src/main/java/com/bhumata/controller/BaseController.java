@@ -1,16 +1,13 @@
 package com.bhumata.controller;
 
 
-
-
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 @Controller
 @RequestMapping(value="/")
-public class HomeController {
+public class BaseController {
+	
 	
 	
 	@RequestMapping(value="/showHome")
@@ -34,6 +31,9 @@ public class HomeController {
 	{
 		return "fruit";
 	}
+	
+	
+	
 	  
 	//show seeds
 	@RequestMapping(value="/showSeed")
@@ -65,20 +65,8 @@ public class HomeController {
 					return "cereals";
 				}
 				
-	
-	
-	         
-	         
-	       //show  form
-	         @RequestMapping(value = "/showForm")
-	     	public String showForm()
-	     	{
-	     		return "productlogin";
-	     	}
+	      
 	         
 
-	
 
-	
 }
-

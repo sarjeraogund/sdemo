@@ -1,5 +1,7 @@
 package com.bhumata.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,20 @@ public class ProductServiceImpl implements ProductService {
 	
 	
 	
+	
+	
+	public Product getProduct(Product product) {
+		return productDAO.getProduct(product);
+	}
+	
+	public List<Product> listProductByName(Product product, Integer offset, Integer maxResults) {
+		return productDAO.listProductByName(product,offset, maxResults);
+	}
+	
+	
+	public List<Product> listProductByCategory(Product product, Integer offset, Integer maxResults) {
+		return productDAO.listProductByCategory(product,offset, maxResults);
+	}
 
 	
 

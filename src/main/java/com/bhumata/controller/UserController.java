@@ -24,13 +24,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/showHome1")
-	public String showHome1(@RequestParam("invalid") Long invalid,Model model)
-	{
-		model.addAttribute("invalid", invalid);
-		model.addAttribute("LoginMsg","Please enter valid email and password");
-		return "home";
-	}
+	
 	
 //showLogin
 	@RequestMapping(value="/UserLogin")

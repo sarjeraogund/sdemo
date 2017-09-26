@@ -13,6 +13,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link href="css/footer.css" rel="stylesheet">
+  <link href="css/header.css" rel="stylesheet">
+                                                       
+   <link href="css/style.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css" media="all" />	
+
+
 <title>Insert title here</title>
 
 <style type="text/css">
@@ -26,10 +33,9 @@ margin-top:5px;}
 select { width:225px;text-align:center; }
 select .lt { text-align:center; }
 select { text-indent: 5px; }
-<!--
 
-.item:hover { -moz-box-shadow: 0 0 40px #ccc; -webkit-box-shadow: 0 0 40px #ccc; box-shadow: 0 0 40px #ccc; }
--->
+
+/* .item:hover { -moz-box-shadow: 0 0 40px #ccc; -webkit-box-shadow: 0 0 40px #ccc; box-shadow: 0 0 40px #ccc; } */
 
 .item:focus
 
@@ -118,9 +124,9 @@ img {
     height: 320px; 
     margin: 8px;
     background:#FEFEFE; 
-    display: inline-block;
+    display: inline-block; 
     border-radius: 3px;
-    box-shadow:0 0 8px rgba(0, 0, 0, 0.06);
+    /* box-shadow:0 0 8px rgba(0, 0, 0, 0.06); */
  }
 
 h3 {
@@ -277,6 +283,19 @@ input[type=submit] {
     background-color: #4CAF50;
 } 
 
+.group
+{
+border: none;
+	outline: 0;
+	font-size: 0.9em;
+	color: #fff;
+	background: #07980e;
+	width: 110%;
+
+}
+
+
+
 </style>
 </head>
 <body>
@@ -293,6 +312,73 @@ input[type=submit] {
     <title>Document</title>
 </head>
 <body>
+
+ <div class="top_bg">
+	<div class="container">
+		<div class="header_top-sec">
+			<div class="top_right">
+				<ul>
+					<li><select class="group">
+							  <option><font size="8">English</font></option>
+							  <option><font size="8">Marathi</font></option>
+							  
+							</select></li> |
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="top_left">
+				<ul>
+					<li class="top_link"><a href="#">Farmer</a></li>	
+					<li class="top_link"><a href="#"  >Login</a>
+						<span>or</span><a  href="#"  >Signup</a></li>|
+					<li class="top_link"><a href="#">My Account</a></li>					
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- top-header -->
+<!-- logo-cart -->
+<div class="header_top" style="background-color:#fff;">
+	<div class="container">
+		<div class="logo">
+		 	<a href="index.html">BHUMATA</a>			 
+		</div>
+		<div class="search" style="margin-left:40px; border:1px solid  #07980e;">
+				 <form name="form1" action="showFilterproduct">
+					<input type="text" name="pname" placeholder="Search..." >
+					<input type="submit" value="">
+					</form>
+			</div>
+		<div class="header_right">
+			<div class="cart box_1">
+				<a href="checkout.html">
+				<div class="total">
+				 <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items</div>
+					<!-- <img src="images/image/cart1.png" alt=""/> -->
+				</a>
+				<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+				<div class="clearfix"> </div>
+			</div>				 
+		</div>
+		<div class="clearfix"></div>	
+	</div>
+</div>
+<script src="js/simpleCart.min.js"> </script>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="wrap">
@@ -356,15 +442,16 @@ input[type=submit] {
         </div>
         
     </div>
-  <div class="items"> 
+  <!--  <div class="items">  -->
   
         <div data-price="160" class="item">  
-
+ 
 
 
 <table>
 
-        <c:forEach items="${product}" var="product" varStatus="rowCounter" >
+        <c:forEach items="${product}" var="product" varStatus="rowCounter">
+       
         <c:if test="${rowCounter.count % 4 == 1}">
    
         <tr>
@@ -381,71 +468,43 @@ input[type=submit] {
             <option value="1000">1kg. approx 6,7 nos. Rs.160</option>
         </select>
          
-            <!-- <div class="aa"> 
-           -->
-         <br>
-         <br>
+           
+        
+   
          Qty:<input type="text" name="qty" style="width: 40px;">
         
          	<button class="btn" qa="add" type="button" style="margin-left: 50px;">
          	
          	<strong style=" text-shadow: 1px 1px #fff;">Add to Cart </strong>
          	</button>
-         	<!-- </div> -->
+         	
          </td>
          <c:if test="${rowCounter.count % 4 == 1||rowCounter.count == 4}">
          
          </c:if>
          
           
-         <%--  <div class="info">
-                	 <p class="descroption">Fresho</p> 
-                    <h3>${product.productName }</h3>
-                    
-                    <h5>Price:${product.price}</h5>
-             </td>      
-         	
-                     <select name="os0" id="os0">
-            <option value="1000">(1kg. approx 6,7 nos. Rs.160)</option>
-            <option value="250">250gm. approx 2,3 nos. Rs.40</option>
-            <option value="500">500gm. approx 4,5 nos. Rs.80</option>
-            <option value="1000">1kg. approx 6,7 nos. Rs.160</option>
-        </select>
-         --%>
-	
-        
-        <!--  <div class="aa">
-          
-         
-         Qty:<input type="text" name="qty" style="width: 40px;">
-        
-         	<button class="btn" qa="add" type="button" style="margin-left: 50px;">
-         	
-         	<strong style=" text-shadow: 1px 1px #fff;">Add to Cart </strong>
-         	</button>
-           
-            -->
-          
-          
+       
            
                 
          	
          </c:forEach>
          	</table>
+         	</div>
          
          	</div>
          	
-                </div>
                 
-        </div>
+                
+        
    
     
-        </div>    
+        <!-- </div>    
           
-        </div>
+        </div> -->
   
   
- <button class="loadmore">Load More</button>
+<!--  <button class="loadmore">Load More</button> -->
     
 </body>
 

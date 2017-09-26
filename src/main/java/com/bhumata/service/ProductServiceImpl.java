@@ -21,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	
 	
+	
 	public Product getProduct(Product product) {
 		return productDAO.getProduct(product);
 	}

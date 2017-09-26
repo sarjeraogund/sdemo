@@ -44,6 +44,7 @@ public class ProductController {
 			
 		}
 		
+
 		// show products
 		@RequestMapping(value = "/showdisplayproduct")
 		public String showdisplayproduct()
@@ -130,5 +131,7 @@ public class ProductController {
 				}
 		
 		
-		
+
+	
+
 }

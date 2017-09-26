@@ -39,6 +39,9 @@ public class BaseController {
 	{
 		return "fruit";
 	}
+	
+	
+	
 	  
 	//show seeds
 	@RequestMapping(value="/showSeed")
@@ -70,6 +73,7 @@ public class BaseController {
 					return "cereals";
 				}
 				
+	         
 	
 	
 	         

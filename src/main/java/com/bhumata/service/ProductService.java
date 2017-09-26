@@ -7,6 +7,7 @@ import com.bhumata.model.Product;
 public interface ProductService {
 	
 	public void saveProduct(Product product);
+
 	/*public Product getProduct(Long pId );*/
 	public Product getProduct(Product product);
 	

@@ -63,6 +63,7 @@ public Product getProduct(Product product) {
 			List<Product> product1 = query.list();
 			return product1;
 			
+
 				}
 	
 		
@@ -322,7 +323,7 @@ public Product getProduct(Product product) {
 
 			
 	
-				}
+}
 
 
 
@@ -349,3 +350,6 @@ public Product getProduct(Product product) {
 
 	
 			
+				
+
+

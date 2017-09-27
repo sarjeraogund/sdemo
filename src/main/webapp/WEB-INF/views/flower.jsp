@@ -12,6 +12,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+  
+  
 
 <link href="css/footer.css" rel="stylesheet">
   <link href="css/header.css" rel="stylesheet">
@@ -45,7 +55,9 @@ body {
 }
 .wrap {
     max-width: 1300px;
-    margin: 0 auto ;
+    margin: 0 auto ; 
+    padding-top: 1px;
+   
 }
 
 
@@ -120,7 +132,7 @@ img {
 }
  .item {
     vertical-align: top;
-    width: 230px; 
+    width: 250px; 
     height: 320px; 
     margin: 8px;
     background:#FEFEFE; 
@@ -299,19 +311,7 @@ border: none;
 </style>
 </head>
 <body>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <title>Document</title>
-</head>
-<body>
+
 
  <div class="top_bg">
 	<div class="container">
@@ -435,29 +435,29 @@ border: none;
         <div class="menu-price menu-item">
             <div class="header-item" >Price</div>
             <p>
-                <!--<label for="amount">Price range:</label>-->
+               <!--  <label for="amount">Price range:</label> -->
                 <input type="text" readonly id="amount"  style="border:0; color:#f6931f; font-weight:bold;">
             </p>
             <div id="slider-range"></div>
         </div>
         
     </div>
-  <!--  <div class="items">  -->
+  <div class="items">
   
         <div data-price="160" class="item">  
  
 
 
-<table>
+<table style="margin-left: 50px;">
 
         <c:forEach items="${product}" var="product" varStatus="rowCounter">
        
-        <c:if test="${rowCounter.count % 4 == 1}">
+        <c:if test="${rowCounter.count % 4== 1}">
    
         <tr>
         </c:if>
         
-         <td><br> <img src="<ui:image img='${product.productImg}'></ui:image>" alt="Image" /> <br/> ${rowCounter.count}<br><h3>${product.productName }</h3>
+         <td><br> <img src="<ui:image img='${product.productImg}'></ui:image>" alt="Image" /> <br/><br><h3>${product.productName }</h3>
          
          <h5>Price:${product.price}</h5> 
          
@@ -471,7 +471,7 @@ border: none;
            
         
    
-         Qty:<input type="text" name="qty" style="width: 40px;">
+         Qty:<input type="text" name="qty" style="width: 2.2em;">
         
          	<button class="btn" qa="add" type="button" style="margin-left: 50px;">
          	
@@ -479,22 +479,25 @@ border: none;
          	</button>
          	
          </td>
-         <c:if test="${rowCounter.count % 4 == 1||rowCounter.count == 4}">
+       <%--   <td style="margin-right: 50px;">
+         <c:if test="${rowCounter.count % 4 == 1}">
          
          </c:if>
          
-          
-       
+          </td>
+ --%>       
            
                 
          	
          </c:forEach>
-         	</table>
-         	</div>
-         
-         	</div>
          	
+         	
+         </table>
+         	</div>
+         <br><br>	
                 
+         </div>
+         </div>
                 
         
    
@@ -518,7 +521,7 @@ border: none;
 
 
     <!--Menu-->
-  <script type="text/javascript">
+   <script type="text/javascript">
     $(document).ready(function () {
         $(".sub > a").click(function() {
             var ul = $(this).next(),
@@ -539,7 +542,7 @@ border: none;
     });
 </script>
 <script src="script.js" ></script>
-</html>
+
 <script>
     $( function() {
     $( "#slider-range" ).slider({
@@ -565,11 +568,7 @@ border: none;
           return price >= minPrice && price <= maxPrice;
       }).show();
   }
-  
-//   $( "#slider-range" ).on( "slidechange", function( event, ui ) {
-//     console.log(ui.value);
-// } );
-</script>
-
+  </script>
+  <jsp:include page="Footer.jsp"/>
 </body>
 </html>

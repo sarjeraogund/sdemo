@@ -66,7 +66,13 @@ public class BaseController {
 				}
 				
 	      
-	         
+	       //show form
+	         @RequestMapping(value="/showForm")
+			 public String showForm()
+				{
+					return "productlogin";
+				}
+				
 
 
 }

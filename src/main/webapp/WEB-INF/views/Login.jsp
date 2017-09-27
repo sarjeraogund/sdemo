@@ -86,8 +86,8 @@
 				  <label>
 				    <input type="checkbox"> Remember me
 				  </label>
-			    </div>
-			    <button type="submit" class="btn btn-block btn-color btn-xxl">Submit</button>
+			    </div><a href="showHome">
+			    <button type="submit" class="btn btn-block btn-color btn-xxl">Submit</button></a>
 			  </form>
 			  <hr>
 			  <p><a href=".html#" id="lost-btn">Lost your password?</a></p>

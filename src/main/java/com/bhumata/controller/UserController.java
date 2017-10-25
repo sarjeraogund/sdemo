@@ -27,7 +27,7 @@ public class UserController {
 	
 	
 //showLogin
-	@RequestMapping(value="/UserLogin")
+	@RequestMapping(value="/UserLogin") 
 	public String UserLogin()
 	{
 	   	return "Login";

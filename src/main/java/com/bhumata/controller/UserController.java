@@ -32,7 +32,7 @@ public class UserController {
 	{
 	   	return "Login";
 	}
-
+ 
 //showSignUp
 	@RequestMapping(value="/UserSignUp")
 	public String UserSignUp()

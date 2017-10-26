@@ -19,7 +19,7 @@ padding-top:3px;
 padding-bottom:3px;}s
 .aa {
 
-margin-top:2px;}
+margin-top:2px;} 
 select { width:225px;text-align:center; }
 select .lt { text-align:center; }
 select { text-indent: 5px; }

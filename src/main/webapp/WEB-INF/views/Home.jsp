@@ -201,7 +201,7 @@ html,body {
 	</div>
 </div>	
 
-<div class="container">
+<div class="container"> 
 
 		<div class="Group1">
 			<div class="col-sm-4" >  

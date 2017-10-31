@@ -68,6 +68,7 @@ public Product getProduct(Product product) {
 				String s3="flowers";
 				String s4="dryfruits";
 				String s5="cereals";
+				String s6="seeds";
 				
 			
 				Query query=session.createQuery("from Product p where p.productCategory=:productCategory"); 
@@ -96,6 +97,11 @@ public Product getProduct(Product product) {
 				if(refId==5)
 				{
 					query.setString("productCategory", s5);
+				}
+
+				if(refId==6)
+				{
+					query.setString("productCategory", s6);
 				}
 
 				
